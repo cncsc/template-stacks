@@ -1,0 +1,9 @@
+hashicorp
+jsondecode
+jsonencode
+terragrunt
+tfrc
+tfstate
+tfstatestorage
+yamldecode
+yamlencode

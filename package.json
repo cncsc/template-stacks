@@ -1,0 +1,24 @@
+{
+  "name": "@cncsc/template-stacks",
+  "version": "0.0.0-development",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cncsc/template-stacks.git"
+  },
+  "author": {
+    "name": "Cloud-Native Cybersecurity Collective",
+    "email": "info@cncsc.io",
+    "url": "https://www.cncsc.io/"
+  },
+  "contributors": [
+    {
+      "name": "Armor Defense Inc.",
+      "email": "info@armor.com",
+      "url": "https://www.armor.com/"
+    }
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@cncsc/semantic-release-config": "^1.0.1"
+  }
+}

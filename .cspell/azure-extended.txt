@@ -1,0 +1,8 @@
+azuread
+azurerm
+keyvault
+managementpartner
+resourcegroups
+southcentralus
+southeastasia
+vnet

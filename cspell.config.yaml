@@ -1,0 +1,81 @@
+version: "0.2"
+language: en,en-US
+ignorePaths:
+  - .git
+  - .gitignore
+  - .vscode
+  - .vscode-insiders
+  - "**/*.svg"
+  - azure-pipelines.yml
+  - node_modules
+  - package-lock.json
+  - vscode-extension
+dictionaryDefinitions:
+  - name: terraform
+    path: ./.cspell/terraform.txt
+    addWords: true
+  - name: security
+    path: ./.cspell/security.txt
+    addWords: true
+  - name: azure-extended
+    path: ./.cspell/azure-extended.txt
+    addWords: true
+  - name: google
+    path: ./.cspell/google.txt
+    addWords: true
+  - name: customer-exceptions
+    path: ./.cspell/customer-exceptions.txt
+    addWords: true
+dictionaries:
+  - aws
+  - azure
+  - bash
+  - companies
+  - en_us
+  - fullstack
+  - networking-terms
+  - softwareTerms
+  - terraform
+  - security
+  - azure-extended
+  - google
+  - customer-exceptions
+words:
+  - cncsc
+  - fluentbit
+  - fluentd
+  - kubernetes
+ignoreWords:
+  - accepteula
+  - cdpath
+  - cdup
+  - coalescelist
+  - datasources
+  - disp
+  - dpkg
+  - endswith
+  - eventtypes
+  - funcname
+  - gpedit
+  - gpupdate
+  - gsub
+  - lastpipe
+  - linuxbrew
+  - listkeys
+  - loginuid
+  - maxdepth
+  - mgmt
+  - mindepth
+  - mktemp
+  - noninteractive
+  - olafhartong
+  - operationstatuses
+  - ostype
+  - quantumsa
+  - tmpdir
+  - tobool
+  - totp
+  - tracert
+  - VERSINFO
+import: []
+languageSettings: []

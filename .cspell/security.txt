@@ -1,0 +1,8 @@
+auditctl
+auditd
+cspm
+oathtool
+qualys
+siem
+sysmon
+sysmonconfig
