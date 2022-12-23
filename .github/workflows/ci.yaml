@@ -5,3 +5,5 @@ jobs:
   ci:
     name: Validation
     uses: cncsc/actions/.github/workflows/validation.yaml@main
+    runDefaultLinters: false
+    additionalHomebrewPackages: shellcheck terragrunt
