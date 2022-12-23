@@ -1,6 +1,8 @@
 {
   "name": "@cncsc/template-stacks",
   "version": "0.0.0-development",
+  "description": "{{module_description}}",
+  "main": "terragrunt.hcl",
   "repository": {
     "type": "git",
     "url": "git@github.com:cncsc/template-stacks.git"
