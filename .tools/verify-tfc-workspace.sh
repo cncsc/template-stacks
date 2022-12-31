@@ -65,8 +65,9 @@ function validate_workspace() {
     echo "- Updating workspace execution mode to local..."
     set_execution_mode_local "$tfc_api_token" "$organization" "$workspace"
     echo "- Workspace execution mode updated to to local."
-    echo ""
   fi
+
+  echo ""
 }
 
 function main() {
