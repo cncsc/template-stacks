@@ -25,7 +25,8 @@ function update_package_json() {
 
 function update_github_env_file() {
   local -r github_org="$1"
-  eval "$SED_COMMAND 's/cncsc/$github_org/g' ./github/env.yaml"
+  mv "./github/.template" "./github/$github_org"
+  eval "$SED_COMMAND 's/cncsc/$github_org/g' ./github/$github_org/env.yaml"
 }
 
 function update_remote_state_config() {
