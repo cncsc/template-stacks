@@ -25,7 +25,8 @@ function update_package_json() {
 
 function update_github_env_file() {
   local -r github_org="$1"
-  eval "$SED_COMMAND 's/cncsc/$github_org/g ./github/env.yaml"
+  mv "./github/.template" "./github/$github_org"
+  eval "$SED_COMMAND 's/cncsc/$github_org/g' ./github/$github_org/env.yaml"
 }
 
 function update_remote_state_config() {
@@ -48,8 +49,8 @@ function main() {
     read -r description
   done
 
-  remote_origin="$(git config --get remote.origin.url || true)"
-  github_org="$(dirname "$remote_origin")"
+  repo="$(git config --get remote.origin.url | sed 's/.*://')"
+  github_org="$(dirname "$repo")"
 
   update_package_json "$github_org" "$repository_name" "$description"
   update_github_env_file "$github_org"
@@ -59,6 +60,7 @@ function main() {
 
   echo ""
   echo "Initialization complete. Committing to source control..."
+  pre-commit install
   git add -A
   git commit -m "Initialize repository from template"
   git push -u origin main
