@@ -5,15 +5,16 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 locals {
-  remote_state_config = yamldecode(file(".remote-state-config.yaml"))
-  workspace           = replace(replace("${path_relative_to_include()}", "/[^A-Za-z0-9]/", "-"), "/(-[-]+)/", "-")
+  remote_state_config_path = run_cmd("${get_repo_root()}/.tools/find-remote-state-config.sh", "${path_relative_to_include()}")
+  remote_state_config      = yamldecode(file(local.remote_state_config_path))
+  workspace                = replace(replace("${path_relative_to_include()}", "/[^A-Za-z0-9]/", "-"), "/(-[-]+)/", "-")
 }
 
 // Configure hook to validate the Terraform Cloud workspace is configured for local execution
 terraform {
   before_hook "validate_tfc_workspace" {
     commands = ["import", "plan", "apply", "destroy"]
-    execute  = ["/bin/bash", "${get_terragrunt_dir()}/${path_relative_from_include()}/.tools/verify-tfc-workspace.sh", "${local.remote_state_config.organization}", "${local.workspace}"]
+    execute  = ["/bin/bash", "${get_repo_root()}/.tools/verify-tfc-workspace.sh", "${local.remote_state_config.organization}", "${local.workspace}"]
   }
 }
 
